@@ -135,7 +135,7 @@ void xMPI_Free_mem( void *p)
   if (p != NULL) {
 #ifdef USE_OPENSHMEM
      shmem_barrier_all();
-     shfree(p);
+     shmem_free(p);
 #else
      MPI_Free_mem(p);
 #endif
@@ -149,7 +149,7 @@ void* xMPI_Alloc_mem(size_t nbytes) {
   long lvalue = (long) nbytes;
   long gvalue = shmem_long_max_all(lvalue);
   assert( gvalue >= lvalue );
-  p = (void *) shmalloc( (size_t) gvalue );
+  p = (void *) shmem_malloc( (size_t) gvalue );
   }
 #else
   MPI_Alloc_mem(nbytes, MPI_INFO_NULL, &p);

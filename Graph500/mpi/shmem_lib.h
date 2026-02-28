@@ -36,8 +36,8 @@ int shmem_int_lor_all( int lvalue );
 int shmem_int_and_all( int lvalue );
 int shmem_int_land_all( int lvalue );
 
-void shmem_int_alltoall( int *sendbuf, int *recvbuf );
-void shmem_long_alltoall( long *sendbuf, long *recvbuf );
+void g500_shmem_int_alltoall( int *sendbuf, int *recvbuf );
+void g500_shmem_long_alltoall( long *sendbuf, long *recvbuf );
 
 void shmem_mem_alltoallv( void *sendbuf, 
                           int *sendcounts, 

@@ -30,7 +30,7 @@
   { max_vertex = shmem_ulong_bor_all( max_vertex ); }
 
 #define ALLTOALL_INT( edge_counts_per_owner, edge_counts_per_sender) \
-   shmem_int_alltoall( edge_counts_per_owner, edge_counts_per_sender );
+   g500_shmem_int_alltoall( edge_counts_per_owner, edge_counts_per_sender );
 
 #define ALLTOALLV_EDGE( edges_to_send,edge_counts_per_owner,edge_displs_per_owner, rf_edge_buffer_mpi_type1, edges_to_recv, edge_counts_per_sender, edge_displs_per_sender2, rf_edge_buffer_mpi_type, comm ) \
 {     \
